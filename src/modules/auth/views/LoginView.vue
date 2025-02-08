@@ -135,6 +135,7 @@ const login = async () => {
     console.log(error)
   }
 }
+
 const verificarLogin = async () => {
   const encryptedToken =
     localStorage.getItem(import.meta.env.VITE_NAME_TOKEN) ||
