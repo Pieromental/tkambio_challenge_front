@@ -111,7 +111,7 @@ export function useFetchHttp() {
 
     if (loading) showLoad()
 
-    url = paramsRoute.length > 0 ? url + paramsRoute.join().split(',').join('/') + '/' : url
+    url = paramsRoute.length > 0 ? url + paramsRoute.join().split(',').join('/') : url
 
     try {
       const response = await axios(<AxiosRequestConfig>{

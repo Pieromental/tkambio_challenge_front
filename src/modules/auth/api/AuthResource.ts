@@ -4,7 +4,7 @@ type KeyResource = 'login'
 
 const resources: Record<KeyResource, IHttpResourceOption> = {
   login: <IHttpResourceOption>{
-    path: '/login/',
+    path: '/login',
     method: HttpMethods.Post,
   },
 }
