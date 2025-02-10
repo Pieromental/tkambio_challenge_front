@@ -2,7 +2,7 @@
 
 ## 📌 Descripción
 
-Este proyecto es el frontend del sistema TKAMBIO, desarrollado con Vue 3, Composition API y Sass. Está diseñado para interactuar con el backend alojado en el siguiente repositorio:
+Este proyecto es el frontend del sistema TKAMBIO, desarrollado con Vue 3, Composition API ,Sass y Docker. Está diseñado para interactuar con el backend alojado en el siguiente repositorio:
 
 🔗 **Backend del Proyecto:** [tkambio_back](https://github.com/Pieromental/tkambio_back.git)
 
@@ -15,6 +15,8 @@ Este proyecto es el frontend del sistema TKAMBIO, desarrollado con Vue 3, Compos
 - Axios (para peticiones HTTP)
 - SASS (para estilos)
 - Plugins personalizados para **alertas** y **loaders**
+- Docker version 26.1.1
+- Docker Compose version v2.27.0-desktop.2
 - Soporte para variables de entorno `.env`
 
 ---
@@ -108,6 +110,12 @@ npm run dev
 
 ```bash
 npm run build
+```
+---
+
+### 🐬 4. Si prefieres levantarlo usando Docker 
+```bash
+docker-compose up -d --build
 ```
 ---
 
