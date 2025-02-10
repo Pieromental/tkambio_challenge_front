@@ -47,7 +47,7 @@ watch(isLoading, (newVal) => {
   animation: fadeIn 0.5s ease-in-out forwards
 
   &.fade-out
-    animation: fadeOut 1.2s ease-in-out forwards
+    animation: fadeOut 0.5s ease-in-out forwards
 
 .loader-content
   display: flex

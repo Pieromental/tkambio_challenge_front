@@ -23,6 +23,7 @@ import ReportTable from '../components/ReportTable.vue'
 import ReportModal from '../components/ReportModal.vue'
 import ReportButton from '../components/ReportButton.vue'
 import { resources } from '../api/ReportResource'
+import Echo from '@/plugin/echoPlugin'
 /****************************************************************************/
 /*                             COMPOSABLES                                    */
 /****************************************************************************/
@@ -33,8 +34,9 @@ const { showAlert } = useAlert()
 /****************************************************************************/
 /*                             DATA                                       */
 /****************************************************************************/
-const dataReport = ref([])
+const dataReport = ref<any>([])
 const showModal = ref(false)
+
 /****************************************************************************/
 /*                             METHODS                                       */
 /****************************************************************************/
@@ -58,15 +60,28 @@ const listReport = async () => {
     console.log(error)
   }
 }
+const startWebSocket = () => {
+  try {
+    Echo.channel('reports').listen('.generated', (data: any) => {
+      if (!data || !data.report_id) {
+        console.warn('⚠️ Report ID no disponible:', data)
+        return
+      }
+      dataReport.value = [data, ...dataReport.value]
+    })
+  } catch (error) {
+    console.log('❌ Error al iniciar WebSocket:', error)
+  }
+}
 const closeModal = async () => {
   showModal.value = false
-  await listReport()
 }
 /****************************************************************************/
 /*                             LYFECICLE                                     */
 /****************************************************************************/
-onMounted(() => {
-  listReport()
+onMounted(async () => {
+  await listReport()
+  startWebSocket()
 })
 </script>
 <style scoped lang="sass">
