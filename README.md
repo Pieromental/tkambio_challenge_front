@@ -7,7 +7,7 @@ Este proyecto es el frontend del sistema TKAMBIO, desarrollado con Vue 3, Compos
 🔗 **Backend del Proyecto:** [tkambio_back](https://github.com/Pieromental/tkambio_back.git)
 
 ## 🚀 Tecnologías utilizadas
-
+- Node 22.5.1
 - Vue 3 + Vite
 - TypeScript
 - Vue Router
