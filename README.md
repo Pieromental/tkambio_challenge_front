@@ -66,10 +66,22 @@ Copia y pega las siguientes variables:
 
 ```
 BASE_URL=http://localhost/
+
 NODE_ENV=development
+
+
 VITE_NAME_TOKEN=dJ12ksx_wqh821kjs
-VITE_CLIENT_API_URL=http://localhost:8080
+
+
+VITE_CLIENT_API_URL=http://localhost:8000
+
 VITE_CLIENT_CRED_ENCRYPT_KEY=HdCQjbkyixu7y9_7wgMHJt6VVzM76izY
+
+VITE_PUSHER_APP_KEY=local-app-key
+VITE_PUSHER_APP_CLUSTER=mt1
+VITE_PUSHER_HOST=127.0.0.1
+VITE_PUSHER_PORT=6001
+VITE_PUSHER_SCHEME=http
 ```
 
 > 👐 **Nota:** Si la API backend no está en `http://localhost:8080`, cambia `VITE_CLIENT_API_URL` con la URL correcta.
@@ -97,13 +109,6 @@ npm run dev
 ```bash
 npm run build
 ```
-
-### 🛠️ 4. Servir la versión de producción localmente
-
-```bash
-npm run preview
-```
-
 ---
 
 ## 🔐 Uso de Plugins Personalizados
